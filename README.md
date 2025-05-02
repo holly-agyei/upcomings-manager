@@ -2,6 +2,20 @@
 
 A Chrome extension that helps you save opportunities, ideas, and deadlines with Google Sheets integration.
 
+## Installation
+
+Currently, the extension is available in two ways:
+
+1. **Developer Mode Installation** (Recommended for testing/development):
+   - Follow the setup instructions below
+   - Load the extension in Chrome's developer mode
+   - This requires enabling developer mode in Chrome
+
+2. **Chrome Web Store** (Coming Soon):
+   - The extension will soon be available on the Chrome Web Store
+   - This will provide one-click installation
+   - No developer mode required
+
 ## Features
 
 - 📝 Clean, modern input form
@@ -50,6 +64,9 @@ A Chrome extension that helps you save opportunities, ideas, and deadlines with 
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable "Developer mode" in the top right
 3. Click "Load unpacked" and select the extension directory
+4. The extension will appear in your Chrome toolbar
+
+Note: When installed in developer mode, you'll see a "Developer mode" warning. This is normal and won't affect the extension's functionality.
 
 ## Usage
 
