@@ -13,8 +13,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -35,7 +37,7 @@ body {
 .tabs {
     display: flex;
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     background: var(--secondary-color);
     border-radius: 8px 8px 0 0;
     padding: 4px;
@@ -48,11 +50,12 @@ body {
     border: none;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-color);
     opacity: 0.7;
     transition: all 0.2s ease;
     border-radius: 6px;
+    letter-spacing: 0.3px;
 }
 
 .tab:hover {
@@ -64,7 +67,8 @@ body {
     opacity: 1;
     background: white;
     color: var(--primary-color);
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: 0 1px 3px var(--shadow-color);
+    font-weight: 600;
 }
 
 .tab-content {
@@ -83,8 +87,9 @@ label {
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-color);
+    letter-spacing: 0.3px;
 }
 
 input[type="text"],
@@ -94,11 +99,13 @@ textarea,
 select {
     width: 100%;
     padding: 12px;
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 14px;
     transition: all 0.2s ease;
     background: white;
+    color: var(--text-color);
+    letter-spacing: 0.3px;
 }
 
 input[type="text"]:focus,
@@ -108,17 +115,17 @@ textarea:focus,
 select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
 }
 
 textarea {
     min-height: 100px;
     resize: vertical;
+    line-height: 1.5;
 }
 
 .button-group {
     display: flex;
-    gap: 12px;
     margin-top: 24px;
 }
 
@@ -135,6 +142,8 @@ button {
     justify-content: center;
     gap: 8px;
     width: 100%;
+    letter-spacing: 0.3px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .record-btn {
@@ -159,18 +168,19 @@ button {
 .submit-btn {
     background-color: var(--primary-color);
     color: white;
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: 0 1px 3px var(--shadow-color);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .submit-btn:hover {
     background-color: var(--hover-color);
     transform: translateY(-1px);
-    box-shadow: 0 4px 6px var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .submit-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: 0 1px 2px var(--shadow-color);
 }
 
 .mic-icon {
@@ -202,19 +212,20 @@ button {
     margin-bottom: 12px;
     background: white;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: 0 1px 3px var(--shadow-color);
 }
 
 .opportunity-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .opportunity-item h3 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 8px;
     color: var(--text-color);
+    letter-spacing: 0.3px;
 }
 
 .opportunity-item p {
@@ -222,11 +233,12 @@ button {
     color: #6c757d;
     margin-bottom: 8px;
     line-height: 1.5;
+    letter-spacing: 0.2px;
 }
 
 .opportunity-item .deadline {
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
 }
 
@@ -242,7 +254,9 @@ button {
     text-align: center;
     z-index: 1000;
     animation: slideUp 0.3s ease;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .notification.success {
@@ -295,11 +309,13 @@ button {
     background: #6c757d;
 }
 
-/* Improve button and input sharpness */
-button, input, textarea, select {
-    font-family: inherit;
-    font-size: 14px;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
+/* Required field indicator */
+.required {
+    color: var(--error-color);
+    margin-left: 2px;
+}
+
+/* Focus styles */
+*:focus {
+    outline: none;
 } 

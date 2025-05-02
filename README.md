@@ -1,15 +1,14 @@
 # Smart Opportunity Saver Chrome Extension
 
-A Chrome extension that helps you save opportunities, ideas, and deadlines with voice input and Google Sheets integration.
+A Chrome extension that helps you save opportunities, ideas, and deadlines with Google Sheets integration.
 
 ## Features
 
-- 🎤 Voice input with smart parsing
-- 📝 Manual input form
+- 📝 Clean, modern input form
 - 📅 Deadline tracking
-- 🔔 Notifications for upcoming deadlines
+- 🔔 Smart notifications for approaching deadlines
 - 📊 Google Sheets integration
-- 📱 Clean, modern UI
+- 📱 Responsive, accessible UI
 
 ## Setup Instructions
 
@@ -28,7 +27,7 @@ A Chrome extension that helps you save opportunities, ideas, and deadlines with 
 ### 2. Google Sheets Setup
 
 1. Create a new Google Sheet
-2. Name the first sheet "Opportunities"
+2. Name the first sheet "Sheet1"
 3. Add the following headers in row 1:
    - Timestamp
    - Name
@@ -56,35 +55,34 @@ A Chrome extension that helps you save opportunities, ideas, and deadlines with 
 
 1. Click the extension icon in your Chrome toolbar
 2. To add a new opportunity:
-   - Fill in the form manually, or
-   - Click the microphone icon and speak your opportunity (e.g., "AI scholarship due August 5th. Link is www.scholarships.ai")
+   - Fill in the form with the opportunity details
+   - Required fields are marked with an asterisk (*)
+   - Add optional notes, deadline, and link
 3. View your saved opportunities in the "View All" tab
 4. Filter opportunities by:
    - Upcoming
    - Past
    - All
 
-## Voice Input Format
-
-The extension can parse voice input in the following format:
-- "Opportunity name. Additional notes. Due [date]. Link is [URL]"
-
-Example:
-- "AI scholarship. Machine learning competition. Due August 5th. Link is www.scholarships.ai"
-
 ## Notifications
 
-You'll receive notifications:
+The extension automatically checks for approaching deadlines every hour and will notify you:
 - When a deadline is due today
 - When a deadline is due tomorrow
+
+Notifications appear as Chrome desktop notifications with:
+- The extension's icon
+- Title: "Opportunity Saver"
+- Clear message indicating which opportunity is due
 
 ## Development
 
 The extension is built using:
 - Chrome Extension Manifest V3
-- Web Speech API for voice recognition
 - Google Sheets API for data storage
 - Chrome Notifications API for reminders
+- Modern CSS with responsive design
+- Accessible HTML structure with ARIA attributes
 
 ## License
 
